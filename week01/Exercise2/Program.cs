@@ -8,27 +8,29 @@
             Console.Write("What is your grade porcentage? ");
             string Input = Console.ReadLine();
             float Grade = float.Parse(Input);
+            string Letter = "";
             if (Grade >=90)
             {
-                Console.WriteLine("A");
+                Letter = "A";
             }
             else if (Grade >= 80 && Grade < 90)
             {
-                Console.WriteLine("B");
+                Letter = "B";
             }
             else if (Grade >= 70 && Grade < 80)
             {
-                Console.WriteLine("C");
+                Letter = "C";
             }
             else if (Grade >= 60 && Grade <70)
             {
-                Console.WriteLine("D");
+                Letter = "D";
             }
             else
             {
-                Console. WriteLine("F");
+                Letter = "F";
             }
-            if (Grade >= 70)
+            
+            if (Letter == "A" ||Letter == "B" ||Letter == "C" )
             {
                 Console.WriteLine("Congratulation! You did it!");
             }
