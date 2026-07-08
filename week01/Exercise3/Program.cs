@@ -11,23 +11,28 @@ class Program
         //Storage the magic number into an int variable.
         int Number =int.Parse(number);
         //Promt the user to guess the number.
-        Console.Write("Guess the number: ");
+        Console.Write("Guess the number between 6-15: ");
         string guess = Console.ReadLine();
         //Storage the number promted into an int variable.
         int Guess = int.Parse(guess);
-
-        if (Guess < Number)
-        {
-            Console.WriteLine("Please choose a higher number");
-        }
-        else if (Guess > Number)
-        {
-            Console.WriteLine("The magic number is lower than this one");
-        }
-        else
-        {
-            Console.WriteLine($"Congratulation! {Guess} is the magic number.");
-        }
+        while (Guess != Number)
+            {
+                if (Guess < Number)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Please choose a higher number");
+                    Console.Write("Please, type another guess: ");
+                }
+                else if (Guess > Number)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("The magic number is lower than this one");
+                    Console.Write("Please, type another guess: ");
+                }
+                guess = Console.ReadLine();
+                Guess = int.Parse(guess);
+            }
+        Console.WriteLine($"Congratulation! {Guess} is the magic number.");
         
     }
 }
