@@ -2,14 +2,14 @@ using System;
 
 class Program
 {
+    
     static void Main(string[] args)
+
     {
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
-        //Takes the magic number from the first player.
-        Console.Write("Please choose your magic number between 6-15: ");
-        string number = Console.ReadLine();
-        //Storage the magic number into an int variable.
-        int Number =int.Parse(number);
+        //Generated a magic number
+        Random randomGenerator = new Random();
+        int Number = randomGenerator.Next(6,16);
         //Promt the user to guess the number.
         Console.Write("Guess the number between 6-15: ");
         string guess = Console.ReadLine();
