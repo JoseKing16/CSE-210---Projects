@@ -7,8 +7,10 @@ class Program
         Console.WriteLine("Hello World! This is the Exercise4 Project.");
         List <string> numbers = new List <string>{};
         int Total = 0;
-        int Average = 0;
+        double Average = 0;
         string UserInput = "";
+        int LargestNumber = 0;
+
         //Prompt user to type numbers until user has finished.
         do
         {
@@ -25,9 +27,6 @@ class Program
 
         }   while (UserInput != "0");
 
-        //Adds numbers type by the user into the list.
-
-
         //Reads the list.
         foreach (string number in numbers)
         {
@@ -36,10 +35,16 @@ class Program
             int Number = int.Parse(number);
             Total += Number;
             Average += Number;
+            if (LargestNumber < Number)
+            {
+                LargestNumber = Number;
+            }
+            
         }
-        Average = (Average/numbers.Count());
-        Console.WriteLine(Total);
-        Console.WriteLine(Average);
-        Console.WriteLine(numbers.Count());
+        Average = Average/numbers.Count();
+        Console.WriteLine($"The total is {Total}");
+        Console.WriteLine($"The average is {Average}");
+        Console.WriteLine($"The largest number is {LargestNumber}");
+        Console.WriteLine($"There are a total of {numbers.Count()} numbers in the list");
     }
 }
